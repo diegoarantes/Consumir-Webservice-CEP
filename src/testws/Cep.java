@@ -10,11 +10,10 @@ public class Cep {
     private String logradouro;
     private String complemento;
     private String bairro;
-    private String localidade;
     private String uf;
-//    private String unidade;
-//    private String ibge;
-//    private String gia;
+    private String estado;
+    private String cidade;
+    private String codigo_ibge;
 
     public Cep() {
     }
@@ -51,14 +50,6 @@ public class Cep {
         this.bairro = bairro;
     }
 
-    public String getLocalidade() {
-        return localidade;
-    }
-
-    public void setLocalidade(String localidade) {
-        this.localidade = localidade;
-    }
-
     public String getUf() {
         return uf;
     }
@@ -66,29 +57,29 @@ public class Cep {
     public void setUf(String uf) {
         this.uf = uf;
     }
-    /*
-    public String getUnidade() {
-        return unidade;
-    }
-    
-    public void setUnidade(String unidade) {
-        this.unidade = unidade;
+
+    public String getCidade() {
+        return cidade;
     }
 
-    public String getIbge() {
-        return ibge;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public void setIbge(String ibge) {
-        this.ibge = ibge;
+    public String getEstado() {
+        return estado;
     }
 
-    public String getGia() {
-        return gia;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public void setGia(String gia) {
-        this.gia = gia;
-    } 
-     */
+    public String getCodigo_ibge() {
+        return codigo_ibge;
+    }
+
+    public void setCodigo_ibge(String codigo_ibge) {
+        this.codigo_ibge = codigo_ibge;
+    }
+
 }

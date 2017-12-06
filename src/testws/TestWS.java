@@ -19,15 +19,17 @@ public class TestWS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        long tempoInicio = System.currentTimeMillis();
+
         Cep cep;
         try {
-            cep = getCep("87703270");
-            if (cep.getLocalidade() != null) {
+            cep = getCep("87720140");
+            if (cep.getCidade() != null) {
                 System.out.println(cep.getLogradouro());
                 System.out.println(cep.getBairro());
-                System.out.println(cep.getLocalidade());
-                System.out.println(cep.getUf());
-                // System.out.println(cep.getComplemento());
+                System.out.println(cep.getCidade());
+                System.out.println(cep.getEstado());
+
             } else {
                 System.out.println("CEP Não Encontrado!");
             }
@@ -35,10 +37,13 @@ public class TestWS {
             System.out.println(ex.getMessage());
         }
 
+        //Código do programa...
+        System.out.println("Tempo Total: " + (System.currentTimeMillis() - tempoInicio));
+
     }
 
     private static Cep getCep(final String cep) throws MalformedURLException, IOException {
-        URL url = new URL("http://viacep.com.br/ws/" + cep + "/json");
+        URL url = new URL("http://api.postmon.com.br/v1/cep/" + cep);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("User-Agent", "");
         connection.setRequestMethod("GET");
@@ -47,7 +52,6 @@ public class TestWS {
 
         InputStream content = connection.getInputStream();
         Reader reader = new InputStreamReader(content);
-
         Gson gson = new Gson();
 
         // Criamos nosso objeto de retorno        
