@@ -19,6 +19,7 @@ public class TestWS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //INICIO Teste de Tempo...
         long tempoInicio = System.currentTimeMillis();
 
         Cep cep;
@@ -37,8 +38,8 @@ public class TestWS {
             System.out.println(ex.getMessage());
         }
 
-        //Código do programa...
-        System.out.println("Tempo Total: " + (System.currentTimeMillis() - tempoInicio));
+        //FIM Teste de Tempo...
+        System.out.println("Tempo Total: (ms) " + (System.currentTimeMillis() - tempoInicio));
 
     }
 
